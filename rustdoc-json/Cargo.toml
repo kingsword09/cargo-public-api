@@ -1,14 +1,14 @@
 [package]
 edition = "2024"
-name = "rustdoc-json"
+name = "rustdoc-json-stable"
 version = "0.9.7"
 description = "Utilities for working with rustdoc JSON."
-homepage = "https://github.com/cargo-public-api/cargo-public-api/tree/main/rustdoc-json"
-documentation = "https://docs.rs/rustdoc-json"
+homepage = "https://github.com/kingsword09/cargo-public-api/tree/main/rustdoc-json"
+documentation = "https://docs.rs/rustdoc-json-stable"
 readme = "README.md"
 keywords = ["rustdoc-json", "api", "doc"]
 license = "MIT"
-repository = "https://github.com/cargo-public-api/cargo-public-api/tree/main/rustdoc-json"
+repository = "https://github.com/kingsword09/cargo-public-api/tree/main/rustdoc-json"
 
 [dependencies]
 cargo_metadata = "0.21.0"

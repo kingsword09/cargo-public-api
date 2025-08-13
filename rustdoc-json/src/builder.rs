@@ -89,6 +89,7 @@ fn cargo_rustdoc_command(options: &Builder) -> Result<Command, BuildError> {
         package_target,
         document_private_items,
         cap_lints,
+        use_stable,
     } = options;
 
     let mut command = match OVERRIDDEN_TOOLCHAIN.or(requested_toolchain.as_deref()) {
@@ -101,6 +102,12 @@ fn cargo_rustdoc_command(options: &Builder) -> Result<Command, BuildError> {
             }
             let mut cmd = Command::new("rustup");
             cmd.args(["run", toolchain, "cargo"]);
+
+            if *use_stable {
+                let env_vars = vec![("RUSTC_BOOTSTRAP", "1".to_string())];
+                cmd.envs(env_vars);
+            }
+
             cmd
         }
     };
@@ -279,6 +286,7 @@ pub struct Builder {
     package_target: PackageTarget,
     document_private_items: bool,
     cap_lints: Option<String>,
+    use_stable: bool,
 }
 
 impl Default for Builder {
@@ -298,6 +306,26 @@ impl Default for Builder {
             package_target: PackageTarget::default(),
             document_private_items: false,
             cap_lints: Some(String::from("warn")),
+            use_stable: false,
+        }
+    }
+}
+
+impl Builder {
+    ///
+    /// Creates a new Builder instance configured to use stable Rust toolchain
+    /// This sets use_stable to true and keeps all other settings at their defaults
+    /// Useful when you want to generate rustdoc JSON using stable Rust instead of nightly
+    ///
+    /// # Example
+    /// ```no_run
+    /// use rustdoc_json_stable::Builder;
+    /// let builder = Builder::stable();
+    /// ```
+    pub fn stable() -> Self {
+        Self {
+            use_stable: true,
+            ..Self::default()
         }
     }
 }

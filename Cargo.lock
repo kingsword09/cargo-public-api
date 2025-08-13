@@ -205,7 +205,7 @@ dependencies = [
  "public-api",
  "remove_dir_all",
  "rustc-hash",
- "rustdoc-json",
+ "rustdoc-json-stable",
  "rustup-toolchain",
  "semver",
  "serde",
@@ -1127,7 +1127,7 @@ dependencies = [
  "itertools",
  "predicates",
  "pretty_assertions",
- "rustdoc-json",
+ "rustdoc-json-stable",
  "rustdoc-types",
  "serde",
  "serde_json",
@@ -1262,7 +1262,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2febf9acc5ee5e99d1ad0afcdbccc02d87aa3f857a1f01f825b80eacf8edfcd1"
 
 [[package]]
-name = "rustdoc-json"
+name = "rustdoc-json-stable"
 version = "0.9.7"
 dependencies = [
  "assert_cmd",
