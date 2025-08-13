@@ -3,7 +3,7 @@
 //! `silent(true)`.
 
 fn main() {
-    rustdoc_json::Builder::default()
+    rustdoc_json_stable::Builder::default()
         .manifest_path("invalid/because/we/want/it/to/fail/Cargo.toml")
         .silent(std::env::args().nth(1) == Some("--silent".to_owned()))
         .build()

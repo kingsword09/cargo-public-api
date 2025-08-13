@@ -40,7 +40,7 @@ features = ["serde"]
 
 [dependencies.rustdoc-json-stable]
 path = "../rustdoc-json"
-version = "0.9.7"
+version = "0.9.7-patch.1"
 
 [dependencies.public-api]
 path = "../public-api"
