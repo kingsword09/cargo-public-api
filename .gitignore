@@ -7,3 +7,5 @@ target
 
 /test-apis/*/Cargo.lock
 /rustdoc-json/tests/test_crates/*/Cargo.lock
+
+.DS_Store

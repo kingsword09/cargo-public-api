@@ -44,7 +44,7 @@ tempfile = "3.19.1"
 version = "0.14.0"
 default-features = false
 
-[dev-dependencies.rustdoc-json]
+[dev-dependencies.rustdoc-json-stable]
 path = "../rustdoc-json"
 version = "0.9.7"
 
